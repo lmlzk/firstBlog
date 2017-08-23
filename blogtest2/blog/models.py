@@ -2,9 +2,10 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-class User(models.Model):
-    username = models.CharField(max_length=20,verbose_name="用户名")
-    password = models.CharField(max_length=20,verbose_name="密码")
+# class User(models.Model):
+class User(AbstractUser):
+    # username = models.CharField(max_length=20,verbose_name="用户名")
+    # password = models.CharField(max_length=20,verbose_name="密码")
     avatar = models.ImageField(upload_to='avatar/%m', default='avatar/default.png', max_length=200, verbose_name="头像")
     qq = models.CharField(max_length=20, blank=True, null=True, unique=True, verbose_name="QQ号码")
     mobile = models.CharField(max_length=11, blank=True, null=True, unique=True, verbose_name="电话号码")

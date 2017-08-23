@@ -1,4 +1,5 @@
 from django.contrib import admin
+# from login.models import User
 from blog.models import User,Catagory,Tag,Article,Ad,Links,Comment
 # Register your models here.
 admin.site.site_header = "lml个人blog管理后台"
@@ -6,7 +7,7 @@ admin.site.site_header = "lml个人blog管理后台"
 
 class UserAdmin(admin.ModelAdmin):
     # list_display = ["id", "username", "avatar", "qq", "mobile"]
-    exclude = ["password"]
+    exclude = ["id"]
     actions_on_bottom = True
     search_fields = ["username", "id",]
     list_per_page = 10
